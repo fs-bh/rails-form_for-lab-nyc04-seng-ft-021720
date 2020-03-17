@@ -1,0 +1,8 @@
+<h1>All School Classes</h1>
+<style>ol{list-style:none;}ol>li:before{content:attr(seq)'. ';}</style>
+<ol>
+	<% @school_classes.each do |school_class| %>
+		<li seq='<%= school_class.id %>'><%= link_to school_class.title, school_class_path(school_class) %></li>
+	<% end %>
+</ol>
+<%= link_to 'Create New School Class', new_school_class_path %>
